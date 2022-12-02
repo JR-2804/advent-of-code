@@ -43,8 +43,8 @@ const processInput = () => {
     .readFileSync("./problem-02/input.txt")
     .toString()
     .split("\n")
-    .filter((r) => r.trim().length !== 0)
-    .map((r) => r.split(" "));
+    .filter((row) => row.trim().length !== 0)
+    .map((row) => row.split(" "));
 };
 
 const calculateRoundPoints = (opponentPlay, desiredOutcome) => {
