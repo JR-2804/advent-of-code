@@ -4,7 +4,7 @@ const processInput = () => {
     .toString()
     .split("\n")
     .filter((row) => row.trim().length !== 0)
-    .map((row) => row.split("").map((i) => Number.parseInt(i)));
+    .map((row) => row.split("").map((item) => Number.parseInt(item)));
 };
 
 const getLeftDistance = (grid, row, column) => {
@@ -75,9 +75,9 @@ const calculateScenicScore = (grid, row, column) => {
 const grid = processInput();
 
 let bestScenicScore = 0;
-for (let i = 1; i < grid.length - 1; i++) {
-  for (let j = 1; j < grid[i].length - 1; j++) {
-    const scenicScore = calculateScenicScore(grid, i, j);
+for (let row = 1; row < grid.length - 1; row++) {
+  for (let col = 1; col < grid[row].length - 1; col++) {
+    const scenicScore = calculateScenicScore(grid, row, col);
     if (scenicScore > bestScenicScore) {
       bestScenicScore = scenicScore;
     }
