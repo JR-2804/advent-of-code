@@ -1,5 +1,3 @@
-const { addAbortSignal } = require("stream");
-
 const processInput = () => {
   return require("fs")
     .readFileSync("./problem-07/input.txt")

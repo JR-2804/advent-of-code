@@ -16,9 +16,9 @@ const calculateElfCalories = (totalElfCalories, currentFoodCalories) =>
 
 const calculateElvesCalories = (elves) => elves.reduce(calculateElfCalories, 0);
 
+const findMax = (max, current) => {
+  return current > max ? current : max;
+};
+
 // 67027
-console.log(
-  processInput()
-    .map(calculateElvesCalories)
-    .sort((a, b) => b - a)[0],
-);
+console.log(processInput().map(calculateElvesCalories).reduce(findMax, 0));
